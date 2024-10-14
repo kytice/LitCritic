@@ -1,0 +1,61 @@
+extends layout
+
+block content
+  .row.banner
+    .col-12
+      h1 LitCritic
+      small &nbsp;Discover and review great books!
+
+  .row
+    .col-12.col-md-8
+      .card
+        .card-block
+          h4
+            a(href="/book") The Great Gatsby
+          small &nbsp;
+            i.fa.fa-star
+            i.fa.fa-star
+            i.fa.fa-star
+            i.fa.fa-star
+            i.fa.fa-star-half-o
+          span.badge.badge-pill.badge-default.float-right Classic
+          p.author F. Scott Fitzgerald
+          .genres
+            span.badge.badge-warning American Literature
+            span.badge.badge-warning Novel
+            span.badge.badge-warning Jazz Age
+
+      .card
+        .card-block
+          h4
+            a(href="/book") To Kill a Mockingbird
+          small &nbsp;
+            i.fa.fa-star
+            i.fa.fa-star
+            i.fa.fa-star
+            i.fa.fa-star
+            i.fa.fa-star
+          span.badge.badge-pill.badge-default.float-right Bestseller
+          p.author Harper Lee
+          .genres
+            span.badge.badge-warning Southern Gothic
+            span.badge.badge-warning Coming-of-age
+
+      .card
+        .card-block
+          h4
+            a(href="/book") 1984
+          small &nbsp;
+            i.fa.fa-star
+            i.fa.fa-star
+            i.fa.fa-star
+            i.fa.fa-star
+            i.fa.fa-star
+          span.badge.badge-pill.badge-default.float-right Dystopian
+          p.author George Orwell
+          .genres
+            span.badge.badge-warning Political Fiction
+            span.badge.badge-warning Science Fiction
+
+    .col-12.col-md-4
+      p.lead LitCritic helps you discover great books and share your thoughts with other readers. From timeless classics to contemporary bestsellers, find your next favorite read and join the discussion.
