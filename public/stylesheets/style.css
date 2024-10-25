@@ -1,7 +1,7 @@
-@import url("//fonts.googleapis.com/css?family=Lobster|Cabin:400,700");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Syne:wght@700&display=swap");
 
 body {
-  font-family: "Cabin", Arial, sans-serif;
+  font-family: "Montserrat", system-ui, -apple-system, sans-serif;
   color: #ffffff;
   background-color: #ccd4b9;
 }
@@ -12,7 +12,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Lobster", cursive;
+  font-family: "Syne", sans-serif;
 }
 
 .navbar {
@@ -21,7 +21,7 @@ h6 {
 }
 
 .navbar-brand {
-  font-family: "Lobster", cursive;
+  font-family: "Syne", sans-serif;
 }
 
 .banner {
@@ -83,5 +83,5 @@ h4 small {
 }
 
 legend {
-  font-family: "Lobster", cursive;
+  font-family: "Syne", sans-serif;
 }
