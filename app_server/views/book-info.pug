@@ -1,79 +1,24 @@
 extends layout
+include _includes/sharedHTMLfunctions
 
 block content
-  .row.banner
-    .col-12
-      h1 LitCritic: Book Reviews
-
-  .row
-    .col-12.col-lg-9
-      .row
-        .col-12.col-md-6
-          p.rating
-            i.fa.fa-star
-            i.fa.fa-star
-            i.fa.fa-star
-            i.fa.fa-star
-            i.fa.fa-star-half-o
-          p Featured Book: "The Great Gatsby" by F. Scott Fitzgerald
-          .card.card-primary
-            .card-block
-              h2.card-title Book Details
-              p.card-text Author: F. Scott Fitzgerald
-              p.card-text Published: 1925
-              p.card-text Genre: Classic American Literature
-          .card.card-primary
-            .card-block
-              h2.card-title Book Themes
-              span.badge.badge-warning
-                i.fa.fa-check
-                | &nbsp;American Dream
-                | &nbsp;
-              span.badge.badge-warning
-                i.fa.fa-check
-                | &nbsp;Wealth
-                | &nbsp;
-              span.badge.badge-warning
-                i.fa.fa-check
-                | &nbsp;Love and Romance
-                | &nbsp;
-        .col-12.col-md-6.book-cover
-          .card.card-primary
-            .card-block
-              h2.card-title Book Cover
-              img.img-fluid.rounded(src='/images/great-gatsby-cover.jpg' alt='The Great Gatsby book cover')
-      .row
-        .col-12
-          .card.card-primary.review-card
-            .card-block
-              a.btn.btn-primary.float-right(href='/book/review/new') Add review
-              h2.card-title Reader Reviews
-              .row.review
-                .col-12.no-gutters.review-header
-                  span.rating
-                    i.fa.fa-star
-                    i.fa.fa-star
-                    i.fa.fa-star
-                    i.fa.fa-star
-                    i.fa.fa-star
-                  span.reviewAuthor John Doe
-                  small.reviewTimestamp 16 October 2024
-                .col-12
-                  p A masterpiece of American literature. Fitzgerald's prose is simply breathtaking.
-              .row.review
-                .col-12.no-gutters.review-header
-                  span.rating
-                    i.fa.fa-star
-                    i.fa.fa-star
-                    i.fa.fa-star
-                    i.fa.fa-star
-                    i.fa.fa-star-o
-                  span.reviewAuthor Jane Smith
-                  small.reviewTimestamp 14 October 2024
-                .col-12
-                  p Beautifully written, but I found the characters hard to relate to. Still, an important read.
-    .col-12.col-lg-3
-      p.lead
-        | LitCritic provides insightful reviews of classic and contemporary literature to enhance your reading experience.
-      p
-        | If you've read this book, please leave a review to help other readers discover great literature.
+  .container.mt-4
+    .row
+      .col-12.col-md-8
+        +bookCard(book)
+        .card.shadow-sm.mb-4
+          .card-body
+            .d-flex.justify-content-between.align-items-center.mb-4
+              h5.card-title.mb-0 Quotes
+            if quotes && quotes.length > 0
+              each quote in quotes
+                .quote.mb-3.pb-3.border-bottom
+                  .d-flex.justify-content-between.align-items-center.mb-2
+                    p.mb-0.fst-italic= `"${quote.text}"`
+            else
+              p.text-muted.text-center No quotes available for this book.
+      .col-12.col-md-4
+        .card.bg-light.shadow-sm
+          .card-body
+            p.lead.mb-3= sidebar.mainText
+            p= sidebar.callToAction

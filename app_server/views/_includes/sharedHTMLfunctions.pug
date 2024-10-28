@@ -1,5 +1,61 @@
+//- Star rating mixin
 mixin outputRating(rating)
-  - for (let i = 1; i <= rating; i++)
-    i.fa.fa-star
-  - for (let i = rating; i < 5; i++)
-    i.fa.fa-star-o
+  - const totalStars = 5
+  .stars.d-inline-flex.align-items-center.flex-nowrap
+    - for (let i = 0; i < totalStars; i++)
+      if i < Math.floor(rating)
+        i.fa.fa-star
+      else if i === Math.floor(rating) && rating % 1 >= 0.5
+        i.fa.fa-star-half-o
+      else
+        i.fa.fa-star-o
+
+
+//- Book card mixin
+mixin bookCard(book)
+  .card.mb-4.shadow-sm
+    .card-body
+      .row.align-items-start
+        .col
+          h4.card-title.mb-0
+            a(href=`/book`).text-decoration-none= book.name
+          p.text-muted.mt-2
+            i.fa.fa-user.me-2
+            strong= book.author
+        .col-auto
+          .d-inline-flex.align-items-center.flex-nowrap
+            +outputRating(book.rating)
+            span.badge.bg-primary.rounded-pill.ms-2= book.rating
+      
+      p.card-text.mb-3= book.description
+      
+      .meta-info.mb-3
+        span.me-3
+          i.fa.fa-bookmark.me-2
+          = book.genre
+        span.me-3
+          i.fa.fa-calendar.me-2
+          = book.published
+        span
+          i.fa.fa-book.me-2
+          | #{book.pages} pages
+      
+      +themesList(book.themes)
+
+
+//- Themes list mixin
+mixin themesList(themes)
+  .themes
+    each theme in themes
+      span.badge.bg-info.text-dark.me-2.mb-1
+        i.fa.fa-tag.me-1
+        = theme
+
+
+//- Quick tips list mixin
+mixin quickTipsList(tips)
+  ul.list-unstyled
+    each tip in tips
+      li.mb-2
+        i.fa.fa-info-circle.me-2.text-info
+        = tip

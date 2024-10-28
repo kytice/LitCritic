@@ -6,25 +6,26 @@ html
     link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
     link(rel='stylesheet', href='/stylesheets/font-awesome.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    nav.navbar.navbar-expand-lg.bg-body-tertiary
+  body.d-flex.flex-column.min-vh-100
+    nav.navbar.navbar-expand-lg.bg-body-tertiary.fixed-top.shadow-sm
       .container-fluid
-        a.navbar-brand(href='#') LitCritic
+        a.navbar-brand(href='/') Quotist
         button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
           span.navbar-toggler-icon
         #navbarNav.collapse.navbar-collapse
-          ul.navbar-nav
+          ul.navbar-nav.ms-auto
             li.nav-item
               a.nav-link.active(aria-current='page' href='/') Home
             li.nav-item
-              a.nav-link(href='/about/') About
-
-    .container
-      block content
-      footer
+              a.nav-link(href='/login') Login
+    
+    main.flex-shrink-0
+      .container
+        block content
+    
+    footer.footer.mt-auto.py-3.bg-body-tertiary
+      .container.text-center
         .row
           .col-12
-            small &copy; Suzanna Lysenko 2024
-    script(src='https://code.jquery.com/jquery-3.1.1.slim.min.js')
-    script(src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js')
-    script(src='/javascripts/bootstrap.min.js')
+            small.text-muted © 2024 Quotist by 
+              a.text-decoration-none(href='https://github.com/kytice') Suzanna Lysenko

@@ -1,5 +1,24 @@
 extends layout
+include _includes/sharedHTMLfunctions
 
 block content
-  h1= title
-  p Welcome to #{title}
+  .container.mt-4
+    .row.banner.mb-4
+      .col-12
+        h1.display-4
+          i.fa.fa-quote-left.me-3
+          = pageHeader.title
+        p.lead= pageHeader.strapline
+
+    .row
+      .col-12.col-md-8
+        each book in books
+          +bookCard(book)
+
+      .col-12.col-md-4
+        .card.bg-light.shadow-sm
+          .card-body
+            p.lead.mb-4= sidebar.mainText
+            .quick-tips.border-top
+              br
+              +quickTipsList(sidebar.quickTips)
