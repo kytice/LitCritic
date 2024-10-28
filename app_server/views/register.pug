@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  .container.mt-5.mb-5
+    .row.justify-content-center
+      .col-md-8.col-lg-6
+        .card.shadow-sm
+          .card-body
+            h2.card-title.text-center.mb-4 Register
+            form(action='/', method='POST')
+              .mb-3
+                label.form-label(for='name') Name
+                input#name.form-control(type='text', name='name', required)
+              .mb-3
+                label.form-label(for='email') Email
+                input#email.form-control(type='email', name='email', required)
+              .mb-3
+                label.form-label(for='password') Password
+                input#password.form-control(type='password', name='password', required)
+              .mb-3
+                label.form-label(for='confirmPassword') Confirm Password
+                input#confirmPassword.form-control(type='password', name='confirmPassword', required)
+              button.btn.btn-primary.w-100.mb-3(type='submit') Register
+              .text-center
+                small.text-muted Already have an account? 
+                  a(href='/login') Login
