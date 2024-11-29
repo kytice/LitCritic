@@ -1,0 +1,62 @@
+<div class="flex-shrink-0" role="main">
+  <div class="container mt-4">
+    <div class="row banner mb-4">
+      <div class="col-12">
+        <h1 id="quotist" class="display-4">Quotist</h1>
+        <p>Find your next favorite quote</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 col-md-8">
+        <div class="card mb-4 shadow-sm" *ngFor="let book of books">
+          <div class="card-body">
+            <h4>
+              <a href="/book/{{ book._id }}">{{ book.name }}</a>
+              <app-rating-stars [thisRating]="book.rating"></app-rating-stars>
+            </h4>
+
+            <strong>{{ book.author }}</strong>
+
+            <p>{{ book.description }}</p>
+
+            <div class="meta-info mb-3">
+              <span class="me-3">{{ book.genre }}</span>
+              <span class="me-3">{{ book.published }}</span>
+              <span>{{ book.pages }} pages</span>
+            </div>
+
+            <div class="themes">
+              <span
+                class="badge bg-info text-dark me-2"
+                *ngFor="let theme of book.themes"
+              >
+                {{ theme }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-4">
+        <div class="card bg-light shadow-sm">
+          <div class="card-body">
+            <p>
+              Quotist helps you discover and save meaningful quotes from your
+              favorite books.
+            </p>
+
+            <div class="quick-tips border-top">
+              <ul>
+                <li>Click on a book to see its quotes</li>
+                <li>Save your favorite quotes to your profile</li>
+                <li>Share quotes with your friends</li>
+                <li>Discover new books through meaningful quotes</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
