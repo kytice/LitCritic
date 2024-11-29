@@ -5,7 +5,7 @@ import { firstValueFrom } from 'rxjs';
 
 @Injectable()
 export class QuotistDataService {
-  private apiBaseUrl = 'https://quotist.onrender.com/api/books';
+  private apiBaseUrl = 'https://quotist.onrender.com/api/';
 
   constructor(private http: HttpClient) {}
 
