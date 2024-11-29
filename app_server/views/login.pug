@@ -3,14 +3,14 @@ extends layout
 block content
   .container.mt-5.mb-5
     .row.justify-content-center
-      .col-md-6.col-lg-4
+      .col-md-8.col-lg-6
         .card.shadow-sm
           .card-body
             h2.card-title.text-center.mb-4 Login
-            form(action='/', method='POST')
+            form(action='/login', method='POST')
               .mb-3
-                label.form-label(for='email') Email
-                input#email.form-control(type='email', name='email', required)
+                label.form-label(for='name') Name
+                input#name.form-control(type='text', name='username', required)
               .mb-3
                 label.form-label(for='password') Password
                 input#password.form-control(type='password', name='password', required)
