@@ -13,7 +13,7 @@ const apiRoutes = require("./app_api/routes/index");
 const Account = require("./app_api/models/account");
 const fs = require("fs");
 const http = require("http");
-const https = require("https");
+// const https = require("https");
 
 const app = express();
 
@@ -65,13 +65,13 @@ app.use(function (err, req, res, next) {
   res.render("error");
 });
 
-const privateKey = fs.readFileSync("./sslcert/key.pem", "utf8");
-const certificate = fs.readFileSync("./sslcert/cert.pem", "utf8");
-const credentials = { key: privateKey, cert: certificate };
+// const privateKey = fs.readFileSync("./sslcert/key.pem", "utf8");
+// const certificate = fs.readFileSync("./sslcert/cert.pem", "utf8");
+// const credentials = { key: privateKey, cert: certificate };
 
 const httpServer = http.createServer(app);
-const httpsServer = https.createServer(credentials, app);
+// const httpsServer = https.createServer(credentials, app);
 httpServer.listen(8080);
-httpsServer.listen(8443);
+// httpsServer.listen(8443);
 
 module.exports = app;
