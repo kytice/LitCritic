@@ -1,14 +1,15 @@
 const express = require("express");
 const router = express.Router();
 const ctrlBooks = require("../controllers/books");
-const ctrlAuth = require("../controllers/auth");
+const authRoutes = require("./auth");
 
-/* Book pages */
+router.use((req, res, next) => {
+  res.locals.user = req.user;
+  next();
+});
+
 router.get("/", ctrlBooks.homelist);
-router.get("/book", ctrlBooks.bookInfo);
-
-/* Authentication */
-router.get("/login", ctrlAuth.login);
-router.get("/register", ctrlAuth.register);
+router.get("/book/:bookid", ctrlBooks.bookInfo);
+router.use("/", authRoutes);
 
 module.exports = router;
