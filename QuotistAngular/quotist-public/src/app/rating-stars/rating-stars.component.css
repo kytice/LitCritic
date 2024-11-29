@@ -1,0 +1,16 @@
+.stars {
+  color: #ffd700;
+}
+
+.fa {
+  margin-right: 2px;
+}
+
+.fa-star,
+.fa-star-half-o {
+  color: #ffd700;
+}
+
+.fa-star-o {
+  color: #e4e5e9;
+}
