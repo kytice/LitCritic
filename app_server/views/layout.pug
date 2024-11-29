@@ -17,7 +17,10 @@ html
             li.nav-item
               a.nav-link.active(aria-current='page' href='/') Home
             li.nav-item
-              a.nav-link(href='/login') Login
+              if user
+                a.nav-link(href='/logout') Logout
+              else
+                a.nav-link(href='/login') Login
     
     main.flex-shrink-0
       .container
@@ -34,3 +37,4 @@ footer.footer.mt-auto.py-3.bg-body-tertiary
 
 
 script(src='/javascripts/bootstrap.min.js') 
+block scripts

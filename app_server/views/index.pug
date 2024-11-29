@@ -12,8 +12,9 @@ block content
 
     .row
       .col-12.col-md-8
-        each book in books
-          +bookCard(book)
+        .error= message
+
+        app-home-list Loading...
 
       .col-12.col-md-4
         .card.bg-light.shadow-sm
@@ -21,4 +22,7 @@ block content
             p.lead.mb-4= sidebar.mainText
             .quick-tips.border-top
               br
-              +quickTipsList(sidebar.quickTips)
+              +quickTipsList(sidebar.tips)
+block scripts
+  script(src='/build/polyfills-FFHMD2TL.js')
+  script(src='/build/main-CYRLOMXK.js')
