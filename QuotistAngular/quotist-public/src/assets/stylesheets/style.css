@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather&family=Syne:wght@700&display=swap");
+
+:root {
+  --primary: #348494;
+  --secondary: #985c54;
+  --secondary-dark: #645038;
+  --background: #e0e0a5;
+  --light: #ffffff;
+  --accent: #d4da3c;
+  --font-heading: "Syne", sans-serif;
+  --font-body: "Merriweather", serif;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--background);
+  padding-top: 56px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navbar-brand {
+  font-family: var(--font-heading);
+  color: var(--primary);
+}
+
+.navbar {
+  background-color: var(--primary) !important;
+}
+
+.navbar-brand,
+.nav-link {
+  color: var(--light) !important;
+}
+
+.card {
+  background-color: var(--light);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.card-title a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.badge.bg-primary {
+  background-color: var(--primary) !important;
+}
+
+.badge.bg-info {
+  background-color: var(--accent) !important;
+}
+.fa-info-circle {
+  color: var(--secondary) !important;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.stars {
+  color: var(--secondary);
+}
+
+.banner h1 {
+  color: var(--secondary-dark);
+  text-shadow: var(--light) 2px 5px;
+}
+
+.banner p {
+  color: rgb(134, 124, 124);
+}
+
+/* Auth forms */
+.form-control:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.25rem rgba(0, 58, 102, 0.25);
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--secondary);
+  border-color: var(--secondary);
+}
+
+/* Links */
+.card-body a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.card-body a:hover {
+  color: var(--secondary);
+}
